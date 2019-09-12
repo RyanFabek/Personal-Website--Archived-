@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
 
+//Website Color
+
 
 /* Page Loader */
 #loader {
@@ -61,7 +63,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #448AFF;
+
   font-family: 'Roboto', sans-serif;
 
 }
@@ -76,6 +78,8 @@ body{
 
 
 }
+
+
 
 
 
@@ -96,50 +100,60 @@ body{
   display: block;
   margin: 0;
   position: absolute;
-  bottom: 20px;
   z-index: 1;
+  top:10px;
+  margin-top: 0px;
 
 }
 
 
 
-ul {
+#navlist {
   list-style-type: none;
   margin-bottom: : 100px;
+  margin-top: 0px;
   padding: 0;
   overflow: hidden;
 
   z-index: 2;
-  position: fixed;
+  position: a;
   width: 100%;
   z-index: 3;
-  left: 550px;
+  left: 580px;
   font-family: Roboto;
   font-weight: 100;
+  bottom: 200px;
 
 }
 
-li {
+#navitem {
   float: left;
 
 
 
 }
 
-li a {
+#navitem a {
   display: block;
   color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  position: relative;
+  top: 0px;
 
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: grey;
+#navitem a:hover {
+
+  transform: translate(0px,-5px);
+  transition-duration: 1s;
+
 
 }
+
+@
 
 
 #name {
@@ -162,8 +176,12 @@ li a:hover {
 #About {
 
   position: relative;
-  top: 98%;
-  background-color: #448AFF;
+  top: 75%;
+  text-align: center;
+
+  margin: 0px;
+  padding: 0px;
+
 
 
 }
@@ -171,6 +189,13 @@ li a:hover {
 h2, h3{
   color: black;
   font-size: 40pt;
+  text-align: center;
+}
+
+p {
+  font-size: 15pt;
+
+
 }
 
 
@@ -179,7 +204,7 @@ h2, h3{
   position: relative;
   top: 50%;
   left: 46%;
-  border: 5px white groove;
+  border: 5px black groove;
   border-radius: 5px;
   width: 128px;
   padding: 10px;
@@ -220,15 +245,25 @@ p {
 
   position: relative;
   top: 100%;
+}
 
-  background-color: #448AFF;
-  border-top: 5px white groove;
-  border-bottom: 5px white groove;
+#Job {
+    display: inline;
+    vertical-align: top;
+
+
 
 }
+#Job-description {
+
+  display: inline;
+}
+
 
 #Projects {
 
-
+  text-align: center;
+  position: relative;
+  top: 1000px;
 
 }
