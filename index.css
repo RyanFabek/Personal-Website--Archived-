@@ -1,269 +1,257 @@
+/*File Name: index.css*/
+/*Author: Ryan Fabek*/
+/*Project: Personal Website*/
+
+/*Import Statements*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
 
-//Website Color
+/*Wrapper Class for CSS Grid*/
+.wrapper {
+
+  /*CSS Grid Attributes*/
+  display: grid;
+
+  grid-template-columns: 20% auto;
+
+  grid-template-areas:
+    "M C";
+  grid-row-gap: auto;
+  margin: 0px;
 
 
-/* Page Loader */
-#loader {
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
 
 }
 
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+.wrapper-project {
 
-/* Add animation to "page content" */
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
+display: grid;
 
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 }
-  to { bottom:0px; opacity:1 }
-}
+grid-template-columns: 33% 33% 33%;
 
-@keyframes animatebottom {
-  from{ bottom:-100px; opacity:0 }
-  to{ bottom:0; opacity:1 }
+grid-template-areas:
+  "project project project";
+
+grid-row-gap: 20px;
+grid-column-gap: 20px;
+
+padding-left: 10px;
+padding-right: 40px;
+
 }
 
 
+.wrapper-experience {
 
 
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  grid-template-areas:
+    "job job";
+}
+
+/*Content section of website*/
+.Content {
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-area: C;
+  background-color: lightblue;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #D9D9D9;
+}
+
+/*Menu Section of website*/
+.Menu {
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-area: M;
+  justify-content: center;
+  align-items: center;
+  border-right: 3px black groove;
+  border-bottom: 3px black groove;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width:20%;
+  box-sizing: border-box;
+  /*background-color: #4484CE;*/
+  position: fixed;
+  z-index: 500;
 
 
+}
+
+#Menu-animation{
+
+  height: 100%;
+  width: 20%;
+  position: fixed;
+
+}
 
 
-/* Overall webpage */
+/*General elements*/
+body, html {
 
-html {
+  margin: 0px;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 
-  font-family: 'Roboto', sans-serif;
-
 }
 
 
+a {
 
-body{
-  background-color:white;
-  margin: 0px;
-  height: 100%;
-  width: 100%;
-
-
-}
-
-
-
-
-
-#lottie{
-
-  background-color:#fff;
-
-
-
-
-  opacity: 1;
-
-
-  width:100%;
-  height:95%;
-  transform: translate3d(0,0,0);
-  text-align: center;
-  display: block;
-  margin: 0;
-  position: absolute;
-  z-index: 1;
-  top:10px;
-  margin-top: 0px;
-
-}
-
-
-
-#navlist {
-  list-style-type: none;
-  margin-bottom: : 100px;
-  margin-top: 0px;
-  padding: 0;
-  overflow: hidden;
-
-  z-index: 2;
-  position: a;
-  width: 100%;
-  z-index: 3;
-  left: 580px;
-  font-family: Roboto;
-  font-weight: 100;
-  bottom: 200px;
-
-}
-
-#navitem {
-  float: left;
-
-
-
-}
-
-#navitem a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-  position: relative;
-  top: 0px;
-
-}
-
-/* Change the link color to #111 (black) on hover */
-#navitem a:hover {
-
-  transform: translate(0px,-5px);
-  transition-duration: 1s;
-
-
-}
-
-@
-
-
-#name {
-
-  position: relative;
-  left: 630px;
-  top: 650px;
   color: black;
-  z-index: 2;
+}
 
+h1, h2,h3,h4 {
+
+  font-family: 'Tomorrow', sans-serif;
 
 }
 
-#blinker {
+p,li {
 
-  color: white;
+  font-family: "Roboto", sans-serif;
+
 }
 
+/*Child Elements*/
 
-#About {
 
+/*Navigation bar attributes*/
+#navlist {
+
+  list-style-type: none;
+  padding-top: 10px;
+  right: 20px;
   position: relative;
-  top: 75%;
-  text-align: center;
-
-  margin: 0px;
-  padding: 0px;
+  z-index: -9999;
 
 
 
 }
 
-h2, h3{
-  color: black;
-  font-size: 40pt;
-  text-align: center;
-}
+.navitem {
 
-p {
   font-size: 15pt;
-
-
-}
-
-
-#Resources {
-
-  position: relative;
-  top: 50%;
-  left: 46%;
-  border: 5px black groove;
-  border-radius: 5px;
-  width: 128px;
-  padding: 10px;
-  z-index: 2;
-
-}
-
-#resume_image {
-
-
-  width: 30px;
-  height: 30px;
-  padding-right: 10px;
-}
-
-#github_image {
-
-  width: 30px;
-  height: 30px;
-  padding-right: 10px;
-
-}
-
-#linkedin_image {
-
-  width: 30px;
-  height: 30px;
-  padding-right: 10px;
-}
-
-p {
-
   color: black;
 
+  padding-bottom: 10px;
+
 }
 
-#Experience {
+.navitem:hover {
 
-  position: relative;
-  top: 100%;
-}
-
-#Job {
-    display: inline;
-    vertical-align: top;
 
 
 
 }
-#Job-description {
 
-  display: inline;
+/*Animation for navitems*/
+
+/*Attributes for Github image*/
+#img-github {
+
+  height: 40px;
+  width: 40px;
+
+}
+
+/*Attributes for Github image*/
+#img-resume {
+
+  height: 40px;
+  width: 40px;
+
+}
+/*Attributes for Github image*/
+#img-linkedin {
+
+  height: 40px;
+  width: 40px;
+
+}
+
+/*Attributes for profile image*/
+#profile-pic {
+
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  border: 5px black groove;
+
+
+
+}
+/*Attributes for name below profile picture*/
+#menu-name {
+
+  justify:center;
+
 }
 
 
-#Projects {
+.job {
 
-  text-align: center;
-  position: relative;
-  top: 1000px;
+  background-color: lightgreen;
+
+
+
+}
+
+.project {
+
+  background-color: lightblue;
+  padding-top: 20px;
+  border-radius: 10px;
+  border: 3px black groove;
+
+
+
+}
+
+
+.project:hover {
+
+  animation-name: project-animation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+
+
+
+}
+
+/*Animation for project tiles*/
+
+@keyframes project-animation {
+
+  from{box-shadow: 0px 0px;}
+  to{box-shadow: 5px 10px;}
+
+}
+
+.image-project {
+
+
+  height: 100px;
+  width: 100px;
+}
+
+#project-UPCMS {
+
+  grid-area: project;
+  grid-row-start: 0;
+  grid-row-end: 1;
+
+  grid-column-start: 0;
+  grid-column-end: 1;
 
 }
