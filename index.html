@@ -20,40 +20,34 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto|Tomorrow&display=swap" rel="stylesheet">
     <title>Ryan Fabek</title>
-    <script src="C:\Users\ryanf\Desktop\Personal-Website\Support\three.js"></script>
+    <script src="Support\three.js"></script>
+    <script src="Support\pixi.js"></script>
 
   </head>
 <body>
 
 
 
-  <!--Area for site menu (right column)-->
-  <div class="Menu">
+  <div id="navlist">
+    <li class="navitem"><a href="#Contact">Contact</a></li>
+    <li class="navitem"><a href="#Experience">Experience</a></li>
+    <li class="navitem"><a href="#Skills">Skills</a></li>
+    <li class="navitem"><a href="#Education">Education</a></li>
+    <li class="navitem"><a href="#About">About</a></li>
 
-    <!--Profile picture with name-->
-    <img src="C:\Users\ryanf\Desktop\Personal-Website\images-non-animation\resume.png" id="profile-pic"></img>
-    <h1 id="menu-name">Ryan Fabek</h1>
 
-    <!---->
-    <div id="External-Links">
-
-      <a href="https://github.com/RyanFabek"><img id="img-github" src="C:\Users\ryanf\Desktop\Personal-Website\images-non-animation\github.png"></img></a>
-      <a href="Resume.pdf"><img id="img-resume" src="C:\Users\ryanf\Desktop\Personal-Website\images-non-animation\resume.png"></img></a>
-      <a href="https://www.linkedin.com/in/ryan-fabek/"><img id="img-linkedin" src="C:\Users\ryanf\Desktop\Personal-Website\images-non-animation\linkedin.png"></img></a>
-
-    </div>
-
-    <ul id="navlist">
-      <li class="navitem"><a href="#About">About</a></li>
-      <li class="navitem"><a href="#Experience">Experience</a></li>
-      <li class="navitem"><a href='#Skills'>Skills</a><li>
-      <li class="navitem"><a href="#Projects">Projects</a></li>
-      <li class="navitem"><a href="#Blog">Blog</a></li>
-      <li class="navitem"><a href='#Contact'>Contact</a></li>
-    </ul>
 
 
   </div>
+
+  <div id="animation">
+
+
+
+
+  </div>
+
+
 
 <!--Wrapper for CSS grid -->
 <div class="wrapper">
@@ -61,93 +55,146 @@
   <!--Area for site content (left column)-->
   <div class="Content">
 
-    <h2 id="About">About Me</h2>
+    <div id="profile">
 
-    <p>Hello! I'm a third year electrical engineering student at the University of Ottawa, set to graduate at the end of 2021.</p>
-    
+      <img id="profile-pic" src="images-non-animation\resume.png"></img>
 
-    <h2 id="Skills">Skills</h2>
+      <h1>Ryan Fabek</h1>
 
-    <div class="skill">
+    </div>
 
+
+    <div id="animation">
+
+
+
+    <div>
+
+    <div id="About">
+
+      <h2>About Me</h2>
+
+      <p>Hello! I'm a third year electrical engineering student at the University of Ottawa, set to graduate at the end of 2021.</p>
 
 
     </div>
 
+    <h2 id="Skills">Skills</h2>
+    <div class="wrapper-skills">
+
+      <div class="skill">
+
+        <p>Testing</p>
+
+
+
+      </div>
+
+      <div class="skill">
+
+        <p>Testing</p>
+
+
+
+      </div>
+
+      <div class="skill">
+
+        <p>Testing</p>
+
+
+
+      </div>
+
+
+
+
+
+
+    </div>
 
 
 
     <h2 id="Experience">Experience</h2>
 
-    <div class="job">
-      <h3>Telecom Engineer (Co-op)</h3>
-      <h4>Royal Canadian Mounted Police</h4>
-      <ul>
-        <li>Working with telecommunication engineers to evaluate existing lawful telecom intercept
-        solutions with upcoming telecommunication technologies</li>
-        <li>Developing software in Linux environment by utilizing Python and C</li>
-        <li>Obtained and hold valid top secret level security clearance</li>
-      </ul>
+    <div class="wrapper-experience">
+
+      <div class="job">
+        <h3>Telecom Engineer (Co-op)</h3>
+        <h4>Royal Canadian Mounted Police</h4>
+        <ul>
+          <li>Working with telecommunication engineers to evaluate existing lawful telecom intercept
+          solutions with upcoming telecommunication technologies</li>
+          <li>Developing software in Linux environment by utilizing Python and C</li>
+          <li>Obtained and hold valid top secret level security clearance</li>
+        </ul>
+      </div>
+
+
+      <div class="job">
+        <h3>Indepentent Contractor</h3>
+        <h4>Odandetech Consulting Engineers</h4>
+        <ul>
+          <li>Working with senior electrical engineer to design solutions and standards
+          for electrical utilities and developers</li>
+          <li>Utilizing AutoCAD 2D and 3D tools to illustrate engineering solutions while adhering to standards and regulations.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Senior Technical Student (Co-op)</h3>
+        <h4>Odandetech Consulting Engineers</h4>
+        <ul>
+          <li>Working with senior electrical engineer to design solutions and standards
+          for electrical utilities and developers</li>
+          <li>Utilizing AutoCAD 2D and 3D tools to illustrate engineering solutions while adhering to standards and regulations.</li>
+          <li>Implemented a Unit Price Management System (UPCMS), increasing ease of providing accurate estimates for clients.</li>
+        </ul>
+      </div>
+
+
+      <div class="job">
+        <h3>Senior Technical Student (Co-op)</h3>
+        <h4>Odandetech Consulting Engineers</h4>
+        <ul>
+          <li>Working with senior electrical engineer to design solutions and stadards
+          for electrical utilities and developers</li>
+          <li>Utilizing AutoCAD 2D and 3D tools to illustrate engineering solutions while adhering to standards and regulations.</li>
+          <li>Implemented a Unit Price Management System (UPCMS), increasing ease of providing accurate estimates for clients.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Barista</h3>
+        <h4>Second Cup</h4>
+        <ul>
+          <li>Prepared and served customers conveying a positve and professional attidude.</li>
+          <li>Responsed effectivly to complex requests in a fast paced work environment</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Pool Technician</h3>
+        <h4>Brander's Pool Service</h4>
+        <ul>
+          <li>Preformed maintenance, repairs and installations for pool equiptment.</li>
+          <li>Gained basic knowledge in installing and repairing gas, water and electrical systems</li>
+          <li>Interacted with clients and provided quality customer service.</li>
+        </ul>
+      </div>
+
+
     </div>
 
 
-    <div class="job">
-      <h3>Indepentent Contractor</h3>
-      <h4>Odandetech Consulting Engineers</h4>
-      <ul>
-        <li>Working with senior electrical engineer to design solutions and standards
-        for electrical utilities and developers</li>
-        <li>Utilizing AutoCAD 2D and 3D tools to illustrate engineering solutions while adhering to standards and regulations.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <h3>Senior Technical Student (Co-op)</h3>
-      <h4>Odandetech Consulting Engineers</h4>
-      <ul>
-        <li>Working with senior electrical engineer to design solutions and standards
-        for electrical utilities and developers</li>
-        <li>Utilizing AutoCAD 2D and 3D tools to illustrate engineering solutions while adhering to standards and regulations.</li>
-        <li>Implemented a Unit Price Management System (UPCMS), increasing ease of providing accurate estimates for clients.</li>
-      </ul>
-    </div>
 
 
-    <div class="job">
-      <h3>Senior Technical Student (Co-op)</h3>
-      <h4>Odandetech Consulting Engineers</h4>
-      <ul>
-        <li>Working with senior electrical engineer to design solutions and stadards
-        for electrical utilities and developers</li>
-        <li>Utilizing AutoCAD 2D and 3D tools to illustrate engineering solutions while adhering to standards and regulations.</li>
-        <li>Implemented a Unit Price Management System (UPCMS), increasing ease of providing accurate estimates for clients.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <h3>Barista</h3>
-      <h4>Second Cup</h4>
-      <ul>
-        <li>Prepared and served customers conveying a positve and professional attidude.</li>
-        <li>Responsed effectivly to complex requests in a fast paced work environment</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <h3>Pool Technician</h3>
-      <h4>Brander's Pool Service</h4>
-      <ul>
-        <li>Preformed maintenance, repairs and installations for pool equiptment.</li>
-        <li>Gained basic knowledge in installing and repairing gas, water and electrical systems</li>
-        <li>Interacted with clients and provided quality customer service.</li>
-      </ul>
-    </div>
 
 
 
     <h2 id="Projects">Projects</h2>
 
-    <div class="Wrapper-project">
+    <div class="wrapper-project">
 
     <div #id="project-UPCMS" class="project">
 

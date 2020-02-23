@@ -11,19 +11,51 @@
   /*CSS Grid Attributes*/
   display: grid;
 
-  grid-template-columns: 20% auto;
+  grid-template-columns: 100%;
 
   grid-template-areas:
-    "M C";
+    "C";
   grid-row-gap: auto;
-  margin: 0px;
 
 
 
 }
 
 
+#animation {
+
+
+  z-index: 1;
+  position: relative;
+  top: -90px;
+
+
+}
+
+
+
+
+
+
 .wrapper-project {
+
+display: grid;
+
+grid-template-columns: 33% 33% 33%;
+
+grid-template-areas:
+  "project project project";
+
+grid-row-gap: 20px;
+grid-column-gap: 20px;
+
+padding-left: 10px;
+padding-right: 40px;
+
+}
+
+
+.wrapper-skills {
 
 display: grid;
 
@@ -49,7 +81,13 @@ padding-right: 40px;
 
   grid-template-areas:
     "job job";
+
+    grid-row-gap: 40px;
+    grid-column-gap: 40px;
 }
+
+
+
 
 /*Content section of website*/
 .Content {
@@ -57,42 +95,30 @@ padding-right: 40px;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-area: C;
-  background-color: lightblue;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #D9D9D9;
+  background-color: #242939;
 }
 
 /*Menu Section of website*/
-.Menu {
 
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-area: M;
-  justify-content: center;
-  align-items: center;
-  border-right: 3px black groove;
-  border-bottom: 3px black groove;
-  text-align: center;
-  top: 0;
-  height: 100%;
-  width:20%;
-  box-sizing: border-box;
-  /*background-color: #4484CE;*/
-  position: fixed;
-  z-index: 500;
+
+
+#profile {
+
+  background-color: #235789;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 300px;
+  position: relative;
+  top: -700px;
+  z-index: 2;
+
 
 
 }
 
-#Menu-animation{
-
-  height: 100%;
-  width: 20%;
-  position: fixed;
-
-}
 
 
 /*General elements*/
@@ -101,6 +127,7 @@ body, html {
   margin: 0px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: #242939;
 
 }
 
@@ -113,13 +140,14 @@ a {
 
 h1, h2,h3,h4 {
 
-  font-family: 'Tomorrow', sans-serif;
+  font-family: 'Roboto', sans-serif;
 
 }
 
 p,li {
 
   font-family: "Roboto", sans-serif;
+  z-index: 2;
 
 }
 
@@ -130,28 +158,36 @@ p,li {
 #navlist {
 
   list-style-type: none;
-  padding-top: 10px;
-  right: 20px;
-  position: relative;
-  z-index: -9999;
+  padding-top: 20px;
+  padding-bottom: 70px;
+  z-index: 2;
+
 
 
 
 }
 
-.navitem {
+.navitem, a {
 
-  font-size: 15pt;
-  color: black;
+  font-size: 13pt;
+  color: white;
 
   padding-bottom: 10px;
+  padding-right: 20px;
+  float: right;
+  position: relative;
+  z-index: 2;
 
 }
 
-.navitem:hover {
 
 
+#About {
 
+  background-color: #235789;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-radius: 20px;
 
 }
 
@@ -201,7 +237,9 @@ p,li {
 
 .job {
 
-  background-color: lightgreen;
+  background-color: #235789;
+  border-radius: 15px;
+
 
 
 
@@ -212,7 +250,6 @@ p,li {
   background-color: lightblue;
   padding-top: 20px;
   border-radius: 10px;
-  border: 3px black groove;
 
 
 
@@ -229,12 +266,20 @@ p,li {
 
 }
 
+.skill {
+
+  background-color: yellow;
+  border-radius: 15px;
+
+
+}
+
 /*Animation for project tiles*/
 
 @keyframes project-animation {
 
   from{box-shadow: 0px 0px;}
-  to{box-shadow: 5px 10px;}
+  to{box-shadow: 1px 1px;}
 
 }
 

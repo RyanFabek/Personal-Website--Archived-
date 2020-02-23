@@ -1,88 +1,85 @@
-//File Name: index.js
-//Author: Ryan Fabek
-//Project: Personal Website
 
 
-// these need to be accessed inside more than one function so we'll declare them first
-let container;
-let camera;
-let renderer;
-let scene;
-let mesh;
 
-function init() {
 
-  // Get a reference to the container element that will hold our scene
-  container = document.querySelector( '#scene-container' );
 
-  // create a Scene
-  scene = new THREE.Scene();
 
-  scene.background = new THREE.Color( 0x8FBCD4 );
+const app = new PIXI.Application({
 
-  // set up the options for a perspective camera
-  const fov = 35; // fov = Field Of View
-  const aspect = container.clientWidth / container.clientHeight;
-  const near = 0.1;
-  const far = 100;
+  width: 1920,
+  height: 800
 
-  camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
 
-  // every object is initially created at ( 0, 0, 0 )
-  // we'll move the camera back a bit so that we can view the scene
-  camera.position.set( 0, 0, 10 );
+});
+document.querySelector('#animation').appendChild(app.view);
 
-  // create a geometry
-  const geometry = new THREE.BoxBufferGeometry( 2, 2, 2 );
+// Get the texture for rope.
+const starTexture = PIXI.Texture.from('images-non-animation\star.png');
 
-  // create a purple Standard material
-  const material = new THREE.MeshStandardMaterial( { color: 0x800080 } );
+const starAmount = 1000;
+let cameraZ = 0;
+const fov = 20;
+const baseSpeed = 0.025;
+let speed = 0;
+let warpSpeed = 0;
+const starStretch = 5;
+const starBaseSize = 0.05;
 
-  // create a Mesh containing the geometry and material
-  mesh = new THREE.Mesh( geometry, material );
 
-  // add the mesh to the scene object
-  scene.add( mesh );
-
-  // Create a directional light
-  const light = new THREE.DirectionalLight( 0xffffff, 5.0 );
-
-  // move the light back and up a bit
-  light.position.set( 10, 10, 10 );
-
-  // remember to add the light to the scene
-  scene.add( light );
-
-  // create a WebGLRenderer and set its width and height
-  renderer = new THREE.WebGLRenderer( { antialias: true } );
-  renderer.setSize( container.clientWidth, container.clientHeight );
-
-  renderer.setPixelRatio( window.devicePixelRatio );
-
-  // add the automatically created <canvas> element to the page
-  container.appendChild( renderer.domElement );
-
+// Create the stars
+const stars = [];
+for (let i = 0; i < starAmount; i++) {
+    const star = {
+        sprite: new PIXI.Sprite(starTexture),
+        z: 0,
+        x: 0,
+        y: 0,
+    };
+    star.sprite.anchor.x = 0.5;
+    star.sprite.anchor.y = 0.7;
+    randomizeStar(star, true);
+    app.stage.addChild(star.sprite);
+    stars.push(star);
 }
 
-function animate() {
+function randomizeStar(star, initial) {
+    star.z = initial ? Math.random() * 2000 : cameraZ + Math.random() * 1000 + 2000;
 
-  // call animate recursively
-  requestAnimationFrame( animate );
-
-  // increase the mesh's rotation each frame
-  mesh.rotation.z += 0.01;
-  mesh.rotation.x += 0.01;
-  mesh.rotation.y += 0.01;
-
-  // render, or 'create a still image', of the scene
-  // this will create one still image / frame each time the animate
-  // function calls itself
-  renderer.render( scene, camera );
-
+    // Calculate star positions with radial random coordinate so no star hits the camera.
+    const deg = Math.random() * Math.PI * 2;
+    const distance = Math.random() * 50 + 1;
+    star.x = Math.cos(deg) * distance;
+    star.y = Math.sin(deg) * distance;
 }
 
-// call the init function to set everything up
-init();
+// Change flight speed every 5 seconds
+setInterval(() => {
+    warpSpeed = warpSpeed > 0 ? 0 : 1;
+}, 5000);
 
-// then call the animate function to render the scene
-animate();
+// Listen for animate update
+app.ticker.add((delta) => {
+    // Simple easing. This should be changed to proper easing function when used for real.
+    speed += (warpSpeed - speed) / 20;
+    cameraZ += delta * 10 * (speed + baseSpeed);
+    for (let i = 0; i < starAmount; i++) {
+        const star = stars[i];
+        if (star.z < cameraZ) randomizeStar(star);
+
+        // Map star 3d position to 2d with really simple projection
+        const z = star.z - cameraZ;
+        star.sprite.x = star.x * (fov / z) * app.renderer.screen.width + app.renderer.screen.width / 2;
+        star.sprite.y = star.y * (fov / z) * app.renderer.screen.width + app.renderer.screen.height / 2;
+
+        // Calculate star scale & rotation.
+        const dxCenter = star.sprite.x - app.renderer.screen.width / 2;
+        const dyCenter = star.sprite.y - app.renderer.screen.height / 2;
+        const distanceCenter = Math.sqrt(dxCenter * dxCenter + dyCenter * dyCenter);
+        const distanceScale = Math.max(0, (2000 - z) / 2000);
+        star.sprite.scale.x = distanceScale * starBaseSize;
+        // Star is looking towards center so that y axis is towards center.
+        // Scale the star depending on how fast we are moving, what the stretchfactor is and depending on how far away it is from the center.
+        star.sprite.scale.y = distanceScale * starBaseSize + distanceScale * speed * starStretch * distanceCenter / app.renderer.screen.width;
+        star.sprite.rotation = Math.atan2(dyCenter, dxCenter) + Math.PI / 2;
+    }
+});
