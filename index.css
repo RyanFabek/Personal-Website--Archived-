@@ -4,37 +4,7 @@
 
 /*Import Statements*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
-
-/*Wrapper Class for CSS Grid*/
-.wrapper {
-
-  /*CSS Grid Attributes*/
-  display: grid;
-
-  grid-template-columns: 100%;
-
-  grid-template-areas:
-    "C";
-  grid-row-gap: auto;
-
-
-
-}
-
-
-#animation {
-
-
-  z-index: 1;
-  position: relative;
-  top: -90px;
-
-
-}
-
-
-
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
 
 .wrapper-project {
@@ -67,8 +37,8 @@ grid-template-areas:
 grid-row-gap: 20px;
 grid-column-gap: 20px;
 
-padding-left: 10px;
-padding-right: 40px;
+padding-left: 20px;
+padding-right: 20px;
 
 }
 
@@ -77,13 +47,15 @@ padding-right: 40px;
 
 
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns:100%;
 
   grid-template-areas:
-    "job job";
+    "job";
 
-    grid-row-gap: 40px;
-    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 
@@ -107,16 +79,35 @@ padding-right: 40px;
 
 #profile {
 
-  background-color: #235789;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 300px;
+  background-color: #1a1e24;
+
+  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
   position: relative;
-  top: -700px;
-  z-index: 2;
+  text-align: center;
+  max-width: 90vw;
+  width: 90vw;
+  left: 2.7vw;
+
+
+}
+
+#name {
+
+
+  font-size: 30pt;
+
+
+}
+
+#subtitle {
 
 
 
+  font-size: 16pt;
 }
 
 
@@ -127,7 +118,7 @@ body, html {
   margin: 0px;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color: #242939;
+
 
 }
 
@@ -138,15 +129,24 @@ a {
   color: black;
 }
 
-h1, h2,h3,h4 {
+h1,h3,h4 {
 
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
+  color: #fdfdfd;
+
+}
+
+h2 {
+
+  font-family: 'Roboto Slab', sans-serif;
+  color: #fdfdfd;
+  font-size: 20pt;
 
 }
 
 p,li {
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   z-index: 2;
 
 }
@@ -159,13 +159,19 @@ p,li {
 
   list-style-type: none;
   padding-top: 20px;
-  padding-bottom: 70px;
+  padding-bottom: 40px;
   z-index: 2;
+  position: relative;
+  background-color: rgba(0,0,0,0.1);
+  border-bottom: 1px solid;
+  border-color: rgba(0,0,0,0.1);
 
 
 
 
 }
+
+
 
 .navitem, a {
 
@@ -173,7 +179,7 @@ p,li {
   color: white;
 
   padding-bottom: 10px;
-  padding-right: 20px;
+  margin-right: 20px;
   float: right;
   position: relative;
   z-index: 2;
@@ -181,13 +187,34 @@ p,li {
 }
 
 
+.navitem a:hover{
+
+  border-bottom: 3px solid white;
+
+
+}
+
+
+#skills-section {
+
+
+  background-color: white;
+}
+
 
 #About {
 
   background-color: #235789;
   padding-bottom: 15px;
-  padding-top: 15px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 20px;
+  position: relative;
+  text-align: center;
+  max-width: 90vw;
+  width: 90vw;
+  left: 2.7vw;
 
 }
 
@@ -234,11 +261,38 @@ p,li {
 
 }
 
+#skills-section {
+
+  background-color: #232b2b;
+
+}
+
+#home-section {
+
+  background-color: #1a1e24;
+  /*background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);*/
+  padding-bottom: 20vh;
+  transform: skew(0deg,-10deg);
+
+
+
+
+}
+
+
+#about-section {
+
+
+  margin-top: 20px;
+}
+
 
 .job {
 
   background-color: #235789;
   border-radius: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
 
 
 
@@ -250,6 +304,7 @@ p,li {
   background-color: lightblue;
   padding-top: 20px;
   border-radius: 10px;
+  text-align: center;
 
 
 
@@ -268,8 +323,13 @@ p,li {
 
 .skill {
 
-  background-color: yellow;
+  background-color: #235789;
   border-radius: 15px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-left: 20px;
+  border-radius: 20px;
+  text-align: center;
 
 
 }
@@ -298,5 +358,30 @@ p,li {
 
   grid-column-start: 0;
   grid-column-end: 1;
+
+}
+
+
+
+#Contact {
+
+  background-color:#235789;
+
+
+}
+
+
+#contact-section {
+
+
+
+}
+
+#footer {
+
+  background-color:#1C1F24;
+  font-size: 12pt;
+  box-shadow: 0 50vh 0 50vh #1C1F24;
+
 
 }
